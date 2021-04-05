@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Favorite Books</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/index.css' %}" />
+</head>
+<body>
+    <div class="boxes">
+        <div class="box1">
+            <h2>Welcome, {{ user.first_name }}!</h2><br>
+        </div>
+        <div class="box2">
+            <a class="logout" href="/logout" method=post>Logout</a>
+        </div>
+    </div>
+    <div class="line"></div><br>
+    {% if messages %}
+    <ul>
+        {% for message in messages %}
+            <li class="messages" {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    <div class="boxes">
+        <div class="box1"><h3>Add a Favorite Book</h3><br>
+        <form action="/add" method="post">
+        {% csrf_token %}
+        <table>
+            <tr>
+                <td>
+                    Title
+                </td>
+                <td>
+                    <input type="text" name="title">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Description
+                </td>
+                <td>
+                    <textarea name="description" class="description"></textarea>
+                </td>
+            </tr>
+        </table>
+        <button type="submit">Add</button>
+        </form>
+        </div>
+        <div class="box2">
+            <h3>All Books</h3>
+            {% for book in books %}
+            <ul>
+                <li><a href="/books/{{ book.id }}">{{ book.title  }}</a></li>
+                <li>(Uploaded by {{ book.uploaded_by.first_name }} {{ book.uploaded_by.last_name }})</li>
+                {% if user in book.users_who_like.all %}
+                <li class="italic">this in one of your favorites</li><br>
+                {% else %}
+                <a href="/favorite/{{ book.id }}">Add to favorites</a><br><br>
+                {% endif %}
+            </ul>
+            {% endfor %}
+        </div>
+    </div>
+        
+</body>
+</html>

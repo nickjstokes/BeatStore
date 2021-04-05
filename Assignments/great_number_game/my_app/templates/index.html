@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Great Number Game!</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h2>Welcome to the Great</h2>
+    <h1 class="numbergame">NUMBER GAME</h1>
+    <h3>I am thinking of a number between 1 and 100</h3>
+    <h3>Take a guess!</h3><br>
+    <form method="post" action="/process">
+        {% csrf_token %}
+        <input type="number" class="text" name="guess"><br><br><br>
+        <button type="submit" class="submitbutton">Submit</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,33 @@
+* {
+    margin: 0 auto;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.boxes {
+    padding: 20px;
+    margin: 10px 250px;
+    width: 70%;
+    padding: 50px;
+}
+
+ul li {
+    margin-top: 8px;
+}
+
+ul li:first-child {
+    margin-top: 0;
+}
+
+select {
+    padding: 4px;
+}
+
+button {
+    margin-left: 4px;
+    padding: 4px 8px;
+    background-color: #2185d0;
+    color: white;
+    font-weight: bold;
+    border-radius: 4px;
+}

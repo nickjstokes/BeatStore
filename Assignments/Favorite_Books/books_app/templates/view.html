@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Favorite Books</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/index.css' %}" />
+</head>
+<body>
+    <div class="boxes">
+        <div class="box1">
+            <h2>Welcome, {{ user.first_name }}!</h2><br>
+        </div>
+        <div class="box2">
+            <a class="logout" href="/logout" method=post>Logout</a>
+        </div>
+    </div>
+    <div class="line"></div><br>
+    <div class="boxes">
+        <div class="box1">
+        <h3>{{ books.title }}</h3>
+        Added by: {{ books.uploaded_by.first_name }} {{ books.uploaded_by.last_name }} <br><br>
+        Added on: {{ books.created_at }} <br><br>
+        Last updated on : {{ books.updated_at }} <br><br>
+        Description: <br>
+        <div class="desc">
+            {{ books.description }}
+        </div>
+        </div>
+        <div class="box2">
+        <h3>Users who like this book:</h3>
+        {% for user_who_likes in users_who_like %}
+        <ul>
+            <li class="users_who_like">
+                {{ user_who_likes.first_name }} {{ user_who_likes.last_name }}
+            </li>
+        </ul>
+        {% endfor %}
+        {% if user not in users_who_like %}
+        <a href="/favorite_other/{{ book.id }}">Add to Favorites</a>
+        {% endif %}
+        </div>
+    </div>
+        
+</body>
+</html>

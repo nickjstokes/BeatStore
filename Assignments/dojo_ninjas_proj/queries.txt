@@ -1,0 +1,47 @@
+Dojos.objects.create(name="Dojo_one", city="Boise", state="ID")
+
+Dojos.objects.create(name="Dojo_two", city="Seattle", state="WA")
+
+Dojos.objects.create(name="Dojo_three", city="Los Angeles", state="CA")
+
+a = Dojos.objects.get(id=1)
+a.delete()
+
+b = Dojos.objects.get(id=2)
+b.delete()
+
+c = Dojos.objects.get(id=3)
+c.delete()
+
+Dojos.objects.create(name="Dojo_one", city="Boise", state="ID")
+
+Dojos.objects.create(name="Dojo_two", city="Seattle", state="WA")
+
+Dojos.objects.create(name="Dojo_three", city="Los Angeles", state="CA")
+
+ninja_one = Ninjas.objects.create(dojo_id=1, first_name="Nick", last_name="Stokes", default_dojo=Dojos.objects.get(id=4))
+
+ninja_two = Ninjas.objects.create(dojo_id=2, first_name="Mark", last_name="Appleyard", default_dojo=Dojos.objects.get(id=4))
+
+ninja_three = Ninjas.objects.create(dojo_id=3, first_name="Louie", last_name="Lopez", default_dojo=Dojos.objects.get(id=4))
+
+ninja_four = Ninjas.objects.create(dojo_id=4, first_name="Nyjah", last_name="Sheckler", default_dojo=Dojos.objects.get(id=5))
+
+ninja_five = Ninjas.objects.create(dojo_id=5, first_name="Ryan", last_name="Huston", default_dojo=Dojos.objects.get(id=5))
+
+ninja_six = Ninjas.objects.create(dojo_id=6, first_name="Hyun", last_name="Kummer", default_dojo=Dojos.objects.get(id=5))
+
+ninja_seven = Ninjas.objects.create(dojo_id=7, first_name="Torey", last_name="Pudwill", default_dojo=Dojos.objects.get(id=6))
+
+ninja_eight = Ninjas.objects.create(dojo_id=8, first_name="Aurilien", last_name="Giraurd", default_dojo=Dojos.objects.get(id=6))
+
+ninja_nine = Ninjas.objects.create(dojo_id=9, first_name="Seoul", last_name="Air", default_dojo=Dojos.objects.get(id=6))
+
+first_ninjas = Ninjas.objects.filter(default_dojo=Dojos.objects.get(id=4))
+
+last_ninjas = Ninjas.objects.filter(default_dojo=Dojos.objects.get(id=6))
+
+last_ninja = Ninjas.objects.get(id=9)
+last_ninja.default_dojo
+
+Dojos.objects.create(name="Dojo_four", city="Portland", state="OR")

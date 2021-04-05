@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All the Users</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+</head>
+<body>
+    <h1>All the Users</h1>
+    <table class="user_list">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Age</th>
+    </tr>
+    {% for users in all_users %}
+    <tr>
+        <td>{{ users.id }}</td>
+        <td>{{ users.first_name }} {{ users.last_name }}</td>
+        <td>{{ users.email_address }}</td>
+        <td>{{ users.age }}</td>
+    </tr>
+    {% endfor %}
+    </table>
+    <div class="line"></div>
+
+    <h1>Add a User</h1>
+
+    <div class="form">
+        <form action="/process" method="post">
+        {% csrf_token %}
+        <table class="user_entry">
+            <tr>
+                <td>First Name</td>
+            <td>
+                <input type="text" name="first_name" />
+            </td>
+            <td>Last Name</td>
+            <td>
+                <input type="text" name="last_name" />
+            </td>
+            </tr>
+            <tr class="last">
+            <td>Email</td>
+            <td>
+                <input type="text" name="email_address" />
+            </td>
+            <td>
+                Age
+            </td>
+            <td class="last">
+                <input type="text" name="age" />
+            </td>
+            </tr>
+        </table>
+        <button type="submit">Add</button>
+        </form>
+    </div>
+    </body>
+</html>

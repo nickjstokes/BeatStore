@@ -1,0 +1,30 @@
+Users.objects.create(first_name="Nick", last_name="Stokes", email_address="nstokes2@gmail.com", age="25", created_at="2020-09-31", updated_at="2020-01-12 12:44:12")
+
+Users.objects.create(first_name="Danika", last_name="Haley", email_address="Danika@gmail.com", age="20", created_at="2020-09-31", updated_at="2020-01-12 12:44:12")
+
+Users.objects.create(first_name="Charles", last_name="Smith", email_address="Charles@gmail.com", age="37", created_at="2020-09-31", updated_at="2020-01-12 12:44:12")
+
+Users.objects.all()
+
+
+all_users=Users.objects.all()
+all_users[0].first_name
+
+last_user = Users.objects.last()
+last_user.first_name
+
+first_user = Users.objects.first()
+first_user.first_name
+
+user_to_update = Users.objects.get(id=3)
+user_to_update.last_name = "Pancakes"
+user_to_update.save()
+
+user_to_delete = Users.objects.get(id=2)
+user_to_delete.delete()
+
+Users.objects.all().order_by("first_name")
+
+Users.objects.all().order_by("-first_name")
+
+Users.objects.create(first_name="James", last_name="Kennedy", email_address="djjames@gmail.com", age="29", created_at="2020-09-31", updated_at="2020-01-12 12:44:12")

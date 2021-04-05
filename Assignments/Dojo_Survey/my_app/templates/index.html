@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dojo Survey</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div><form class="box" action="/create_user" method="post">
+    {% csrf_token %}
+    <p>Your Name: <input name="name" type="text"></p>
+    <label for="location">Dojo Location:</label>
+    <select name="location">
+    <option value="Boise">Boise</option>
+    <option value="Los Angeles">Los Angeles</option>
+    <option value="Seattle">Seattle</option>
+    <option value="San Jose">San Jose</option>
+    </select><br><br>
+    <label for="language">Favorite Language:</label>
+    <select name="language">
+    <option value="Python">Python</option>
+    <option value="HTML">HTML</option>
+    <option value="CSS">CSS</option>
+    <option value="Javascript">Javascript</option>
+    </select>
+    <p>Comment (Optional):</p><input name="comment" class="bottom" type="textarea"><br>
+    <button type="submit">Submit</button>
+    </form></div>
+</body>
+</html>

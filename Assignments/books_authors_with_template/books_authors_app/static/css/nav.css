@@ -1,0 +1,12 @@
+div.nav {
+    margin: 20px;
+    text-align: right;
+}
+
+div.nav a {
+    margin-left: 20px;
+}
+
+div.nav a:first-child {
+    margin-left: 0;
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Create</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'css/read_one.css' %}" />
+    </head>
+    <body>
+        <div class="go_back">
+            <a href="/shows">Go Back</a>
+        </div>
+        <div class="box">
+            <h1>Add a New Show</h1>
+            <br />
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>
+                    {{ message }}
+                </li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            <p>Title</p>
+            <form action="/create" method="post">
+                {% csrf_token %}
+                <input
+                    class="long_input"
+                    type="text"
+                    name="title"
+                    value="{{ title|default:'' }}"
+                /><br /><br />
+                <div class="net_release">
+                    <table>
+                        <tr>
+                            <td>Network</td>
+                            <td class="last_td">Release Date</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input
+                                    type="text"
+                                    class="short_input"
+                                    name="network"
+                                    placeholder="{{ show.network}}"
+                                    value="{{ network|default:'' }}"
+                                />
+                            </td>
+                            <td class="last_td">
+                                <input
+                                    type="date"
+                                    name="release_date"
+                                    value="{{ release_date|default:'' }}"
+                                    class="short_input"
+                                />
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <br />
+                <p>Description</p>
+                <input
+                    type="textarea"
+                    class="huge_input"
+                    name="description"
+                    placeholder="description"
+                    value="{{ description|default:'' }}"
+                />
+                <div class="center">
+                    <button type="submit">Create</button>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

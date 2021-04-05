@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    background-color: lightblue;
+}
+
+.head {
+    padding: 10px;
+    margin: 20px auto;
+    text-align: center;
+    border: 1px solid black;
+    width: 25%;
+    padding: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.time {
+    padding: 10px;
+    margin: 20px auto;
+    text-align: center;
+    border: 1px solid black;
+    width: 45%;
+    padding: 20px;
+}

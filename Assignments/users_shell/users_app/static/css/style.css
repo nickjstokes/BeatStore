@@ -1,0 +1,74 @@
+*{
+    margin: 0 auto;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: lightblue;
+}
+
+body {
+    margin: 0 auto;
+    /* text-align: left; */
+}
+
+table.user_list td {
+    text-align: left;
+    padding: 10px;
+    border-left: 1px solid black;
+}
+
+table.user_list th{
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+}
+
+table.user_list th, table.user_list td:last_child{
+border-right: 1px solid black;
+}
+
+h1 {
+    text-align: center;
+    padding: 20px;
+}
+
+.line {
+    border: 1px solid black;
+    width: 80%;
+    height: 0px;
+    margin: 40px auto;
+}
+
+.form {
+    display: flex;
+    justify-content: left;
+    margin: 40px auto;
+    text-align: center;
+}
+
+input {
+    border: 1px solid black;
+}
+
+button {
+    margin: 15px auto;
+    text-align: center;
+    border: 1px solid black;
+    padding: 5px;
+    border-radius: 8px;
+}
+
+table.user_entry td {
+    text-align: right;
+    padding-left: 10px;
+}
+
+table.user_entry tr td {
+    padding-bottom: 10px;
+}
+
+table.user_entry input{
+    padding: 4px;
+}
+
+table.user_list{
+    border: 1px solid black;
+    border-collapse: collapse;
+}

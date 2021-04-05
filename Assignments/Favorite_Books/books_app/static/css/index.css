@@ -1,0 +1,88 @@
+*{
+    margin: 10px auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.boxes{
+    display: flex;
+    justify-content: center;
+    width: 75%;
+}
+
+button{
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 8px 40px;
+    font-size: small;
+    font-weight: 600;
+    margin-left: 15px;
+}
+
+input{
+    border: 1px solid black;
+    padding: 6px;
+    border-radius: 3px;
+}
+
+table td{
+    padding-right: 20px;
+}
+
+h4 {
+    color: green;
+}
+
+.errors li{
+    color: red;
+    text-align: center;
+    list-style-type: none;
+}
+
+.line{
+    border: 2px solid black;
+    height: 0px;
+    width: 60%;
+    border-radius: 30px;
+}
+
+.description{
+    height: 50px;
+    width: 200px;
+}
+
+li{
+    list-style-type: none;
+}
+
+.big{
+    height: 20px;
+    width: 200px;
+    font-size: medium;
+}
+
+.huge{
+    height: 70px;
+    width: 300px;
+}
+
+.red {
+    background-color: tomato;
+    color: white;
+}
+
+.messages{
+    text-align: center;
+    color: red;
+}
+
+.desc{
+    width: 300px;
+}
+
+.users_who_like{
+    list-style-type: square;
+}
+
+.italic{
+    font-style: italic;
+}

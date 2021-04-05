@@ -1,0 +1,72 @@
+* {
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.bottom_nav {
+    text-align: left;
+}
+
+.box {
+    width: 416px;
+    margin: 0 auto;
+}
+
+.center {
+    width: 160px;
+    margin: 20px auto 0 auto;
+}
+
+.long_input {
+    border: 1px solid black;
+    height: 30px;
+    width: 400px;
+    padding-left: 10px;
+}
+
+.short_input {
+    border: 1px solid black;
+    height: 30px;
+    width: 160px;
+    padding-left: 10px;
+}
+
+.net_release {
+    display: flex;
+    justify-content: space-between;
+}
+
+.last_td {
+    padding-left: 63px;
+}
+
+.huge_input {
+    border: 1px solid black;
+    height: 100px;
+    width: 400px;
+    padding-left: 10px;
+}
+
+button {
+    border: 1px solid black;
+    height: 30px;
+    width: 160px;
+    padding-left: 10px;
+    font-weight: 900;
+    border-radius: 6px;
+    background-color: lightcyan;
+}
+
+.go {
+    margin: 20px 37.8%;
+}
+
+.go_back {
+    text-align: right;
+    margin: 10px 30%;
+}
+
+.update {
+    display: flex;
+    margin: 28px 35.3%;
+}

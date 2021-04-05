@@ -1,0 +1,54 @@
+* {
+    margin: 0, auto;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: lightblue;
+}
+
+body {
+    text-align: center;
+    margin: 50px auto;
+    width: 25%;
+    padding: 30px;
+}
+
+.numbergame {
+    background-color: lightskyblue;
+    border: 3px solid lightgreen;
+    border-collapse: collapse;
+    border-radius: 10px;
+    text-align: center;
+    margin: 20px auto;
+    padding: 15px;
+}
+
+.submitbutton {
+    padding: 8px;
+    border-radius: 8px;
+    background-color: lightskyblue;
+    border: 3px solid lightgreen;
+    border-collapse: collapse;
+    font-weight: 900;
+}
+
+.text {
+    padding: 8px;
+    border-radius: 5px;
+}
+
+.box {
+    margin: 20px auto;
+    text-align: center;
+    padding: 60px;
+    border: 5px solid black;
+    color: white;
+    background-color: red;
+}
+
+.correct {
+    margin: 20px auto;
+    text-align: center;
+    padding: 60px;
+    border: 5px solid black;
+    color: white;
+    background-color: green;
+}

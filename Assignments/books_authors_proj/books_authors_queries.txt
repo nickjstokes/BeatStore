@@ -1,0 +1,66 @@
+Books.objects.create(title="C Sharp")
+
+Books.objects.create(title="Java")
+
+Books.objects.create(title="Python")
+
+Books.objects.create(title="PHP")
+
+Books.objects.create(title="Ruby")
+
+Authors.objects.create(first_name="Emily", last_name="Dickinson")
+
+Authors.objects.create(first_name="Jane", last_name="Austen")
+
+Authors.objects.create(first_name="Fyodor", last_name="Dostoevsky")
+
+Authors.objects.create(first_name="William", last_name="Shakespeare")
+
+Authors.objects.create(first_name="Lau", last_name="Tzu")
+
+c = Books.objects.get(id=1)
+c.title = "C#"
+c.save()
+
+b = Authors.objects.get(id=4)
+b.first_name = "Bill"
+b.save()
+
+first_author = Authors.objects.get(id=1)
+book_1 = Books.objects.get(id=1)
+book_2 = Books.objects.get(id=2)
+first_author.books.add(book_1)
+first_author.books.add(book_2)
+
+second_author = Authors.objects.get(id=2)
+book_3 = Books.objects.get(id=3)
+second_author.books.add(book_1)
+second_author.books.add(book_2)
+second_author.books.add(book_3)
+
+third_author = Authors.objects.get(id=3)
+book_4 = Books.objects.get(id=4)
+third_author.books.add(book_1)
+third_author.books.add(book_2)
+third_author.books.add(book_3)
+third_author.books.add(book_4)
+
+fourth_author = Authors.objects.get(id=4)
+book_5 = Books.objects.get(id=5)
+fourth_author.books.add(book_1)
+fourth_author.books.add(book_2)
+fourth_author.books.add(book_3)
+fourth_author.books.add(book_4)
+fourth_author.books.add(book_5)
+
+book_3.authors.all()
+
+d = book_3.authors.get(id=2)
+d.delete()
+
+fifth_author = Authors.objects.get(id=5)
+fifth_author.books.add(book_2)
+
+third_author.books.all()
+
+book_5.authors.all()

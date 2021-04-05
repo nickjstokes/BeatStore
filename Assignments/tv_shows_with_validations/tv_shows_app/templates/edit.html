@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/read_one.css' %}"> 
+</head>
+<body>
+    <div class="go_back">
+        <a href="/shows">Go Back</a>
+    </div>
+<div class="box">
+<h1>Edit Show {{ show.id }}</h1><br>
+{% if messages %}
+<ul class="messages">    
+    {% for message in messages %}    
+        <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>    
+    {% endfor %}
+</ul>
+{% endif %}
+<p>Title</p>
+<form action="/update/{{ show.id }}" method="post">
+    {% csrf_token %}
+    <input class="long_input" type="text" name="title" value="{{ show.title }}"><br><br>
+<div class="net_release">
+    <table>
+        <tr>
+    <td>
+        <p>Network</p>
+    </td>
+    <td class="last_td">
+        <p>Release Date</p>
+    </td>
+        </tr>
+        <tr>
+    <td>
+        <input type="text" class="short_input" name="network" value="{{ show.network}}">
+    </td>
+    <td class="last_td">
+        <input type="date" name="release_date" value="{{ show.release_date }}" class="short_input">
+    </td>
+        </tr>
+    </table>
+</div>
+<br>
+<p>Description</p>
+    <input type="textarea" class="huge_input" name="description" value="{{ show.description }}">
+</div>
+<div class="center">
+    <button type="submit">Update</button>
+</div>
+</form>
+    <div class="center">
+        <a href="/shows/{{ show.id }}">Go to Show</a>
+    </div>
+</body>
+</html>

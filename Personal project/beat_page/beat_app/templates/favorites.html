@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+</head>
+<body>
+    <div class="boxes">
+        <div class="box1">
+            <h1>Welcome {{ current_user.first_name }}! Explore your favorites
+            </h1><br>
+        </div>
+        <div class="box2">
+            <a href="/success" style="display: block;">Dashboard</a>
+            <a class="logout" href="/logout" method=post>Logout</a>
+        </div>
+    </div>
+    <div class="line"></div><br><br><br>
+    <div class="beatbox">
+        <div>
+            <img src="{% static 'css/images/beatstore-logo.png' %}" class="small_logo">
+        </div>
+        {% for beat in current_user.liked_beats.all %}
+    <div>
+        <form action="/favorite/beat/{{ beat.id }}" method="POST">
+            {% csrf_token %}
+            <iframe src="//www.beatstars.com/embed/track/?id={{ beat.iframe_id }}" class="beat" width="100%" height="140"></iframe>
+            {% if beat in current_user.liked_beats.all %}
+            <button type="submit" name = "unfavorite">💔 Unfavorite</button>
+            {% else %}
+            <button type="submit" name = "favorite">💜 Favorite</button>
+            {% endif %}
+        </form>
+        <p>Users who favorited: </p>
+        <ul>
+            {% for user in all_users %}
+            {% if user in beat.user_liked_beats.all %}
+            {% if user != current_user %}
+            <li>
+                {{user.first_name}} {{user.last_name}}
+            </li>
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+        {% endfor %}
+    <div class="bottom">
+    <a href="/success" style="display: block;">
+    <div>
+        <img src="{% static 'css/images/beatstore-logo.png' %}" class="beatstore">
+    </div>
+    </div></a>
+    </div>
+</body>
+</html>

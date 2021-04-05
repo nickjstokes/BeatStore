@@ -1,0 +1,39 @@
+*{
+    margin: 0 auto;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.boxes{
+    display: flex;
+    justify-content: center;
+    width: 70%;
+    padding: 50px;
+}
+
+.table{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.table th{
+    border-bottom: 1px solid black;
+}
+
+.table td {
+    /* border-left: 1px solid black; */
+    border-right: 1px solid black;
+    border-collapse: collapse;
+}
+
+.textbox{
+    height: 40px;
+}
+
+input{
+    border: 1px solid black;
+}
+
+button{
+    border: 1px solid black;
+    border-radius: 4px;
+}

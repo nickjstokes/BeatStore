@@ -1,0 +1,163 @@
+* {
+  margin: 10px auto;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: darkmagenta;
+}
+
+body {
+  background: linear-gradient(
+    168deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(64, 17, 122, 1) 100%,
+    rgba(0, 212, 255, 1) 100%
+  );
+}
+
+.boxes-login {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  width: 70%;
+  height: 750px;
+}
+
+.boxes {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  width: 70%;
+}
+
+button {
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 8px 40px;
+  font-size: small;
+  font-weight: 600;
+  color: darkmagenta;
+  /* box-shadow: 0px 0px 5px 5px darkmagenta; */
+}
+
+button:hover {
+  box-shadow: 0px 0px 10px 10px rgb(27, 10, 182);
+}
+
+input {
+  border: 1px solid black;
+  padding: 6px 60px 6px 6px;
+  border-radius: 3px;
+  color: darkmagenta;
+}
+
+.errors li {
+  color: tomato;
+  text-align: center;
+  /* border: 1px solid red; */
+  /* border-radius: 3px; */
+  list-style-type: none;
+}
+
+.beatbox {
+  display: flexbox;
+  /* align-items: baseline; */
+  justify-content: space-between;
+  width: 50%;
+}
+
+.line {
+  border: 1px solid black;
+  height: 0px;
+  width: 60%;
+  border-radius: 30px;
+  border-color: rgb(27, 10, 182);
+  box-shadow: 0px 0px 5px 5px rgb(27, 10, 182);
+}
+
+.beat {
+  margin-top: 65px;
+  box-shadow: 0px 0px 8px 8px darkmagenta;
+}
+
+.body-nav {
+  margin-top: 30px;
+  display: flex;
+  /* justify-content: space-between; */
+  width: 70%;
+}
+
+.explore {
+  border: 1px solid black;
+  height: 120px;
+  width: 400px;
+  border-radius: 30px;
+  border-color: black;
+  box-shadow: 0px 0px 15px 15px darkmagenta;
+  padding-bottom: 100px;
+  background-image: url("images/sound.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.favorites {
+  border: 1px solid black;
+  height: 120px;
+  width: 400px;
+  border-radius: 30px;
+  border-color: black;
+  box-shadow: 0px 0px 15px 15px darkmagenta;
+  padding-bottom: 100px;
+  background-image: url("images/favorites.png");
+  background-size: cover;
+}
+
+.explore:hover {
+  box-shadow: 0px 0px 25px 25px rgb(27, 10, 182);
+}
+
+.favorites:hover {
+  box-shadow: 0px 0px 25px 25px rgb(27, 10, 182);
+}
+
+.beat:hover {
+  box-shadow: 0px 0px 15px 15px rgb(27, 10, 182);
+}
+
+.beatstore_main {
+  display: flex;
+  margin: 0 auto;
+  height: 250px;
+  margin-top: -80px;
+  margin-bottom: -40px;
+}
+
+.index_logo {
+  display: flex;
+  margin: 0 auto;
+  height: 250px;
+  margin-top: -60px;
+  margin-bottom: -100px;
+}
+
+.beatstore {
+  display: flex;
+  margin: 0 auto;
+  height: 160px;
+  width: 275px;
+  margin-top: -80px;
+}
+
+.bottom {
+  padding-top: 80px;
+  padding-bottom: 30px;
+}
+
+h2 {
+  color: darkmagenta;
+}
+
+.small_logo {
+  display: flex;
+  height: 100px;
+  margin-top: -60px;
+  margin-bottom: -40px;
+}

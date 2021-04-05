@@ -1,0 +1,57 @@
+* {
+    margin: 0 auto;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+h1 {
+    margin: 40px;
+    text-align: center;
+}
+
+table {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+table th {
+    border-bottom: 1px solid black;
+}
+
+table tr th,
+table tr td {
+    padding: 8px;
+}
+
+table th {
+    background-color: #333;
+    color: white;
+    border-right: 1px solid white;
+}
+
+table td {
+    border-right: 1px solid black;
+}
+
+input {
+    border: 1px solid black;
+}
+
+button {
+    border: 1px solid black;
+    border-radius: 4px;
+    padding: 4px 8px;
+    margin-top: 20px;
+    background-color: #2185d0;
+    color: white;
+    font-weight: bold;
+}
+
+.bottom_nav{
+    margin: 0 26%;
+}
+
+.go_back{
+    text-align: right;
+    margin: 10px 30%;
+}

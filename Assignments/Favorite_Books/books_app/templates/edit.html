@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Favorite Books</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/index.css' %}" />
+</head>
+<body>
+    <div class="boxes">
+        <div class="box1">
+        <h2>Welcome, {{ user.first_name }}!</h2>
+        <br />
+        </div>
+        <div class="box2">
+        <a class="logout" href="/logout" method="post">Logout</a>
+        </div>
+    </div>
+    <div class="line"></div>
+    <br />
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+            <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>
+        {{ message }}
+            </li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    <div class="boxes">
+    <div class="box1">
+        <form action="/books/{{ book.id }}/update" method="post">
+        {% csrf_token %}
+        <input
+            type="text"
+            name="title"
+            value="{{ book.title }}"
+            class="big"
+        /><br />
+        Added by: {{ book.uploaded_by.first_name }} {{ book.uploaded_by.last_name }} <br /><br />
+        Added on: {{ book.created_at }} <br /><br />
+        Last updated on : {{ book.updated_at }} <br /><br />
+        Description: <br />
+        <textarea
+            name="description"
+            class="huge"
+        >{{ book.description }}</textarea><br /><br />
+        <div class="buttons">
+            <button type="submit" name="update">Update</button>
+            <button type="submit" name="delete" class="red">Delete</button>
+        </div>
+        </form>
+    </div>
+    <div class="box2">
+        <h3>Users who like this book:</h3>
+        {% for user_who_likes in users_who_like %}
+        <ul>
+        <li class="users_who_like">
+            {{ user_who_likes.first_name }} {{ user_who_likes.last_name }} 
+            {% if user == user_who_likes %}
+            <a href="/unfavorite/{{ book.id }}"> Un-Favorite</a>
+            {% endif %}
+        </li>
+        </ul>
+        {% endfor %}
+    </div>
+    </div>
+</body>
+</html>

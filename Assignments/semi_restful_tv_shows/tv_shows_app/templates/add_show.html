@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Create</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'css/read_one.css' %}" />
+    </head>
+    <body>
+        <div class="go_back">
+            <a href="/shows">Go Back</a>
+        </div>
+        <div class="box">
+            <h1>Add a New Show</h1>
+            <br />
+            <p>Title</p>
+            <form action="/create" method="post">
+                {% csrf_token %}
+                <input class="long_input" type="text" name="title" /><br /><br />
+                <div class="net_release">
+                    <table>
+                        <tr>
+                            <td>Network</td>
+                            <td class="last_td">Release Date</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input
+                                    type="text"
+                                    class="short_input"
+                                    name="network"
+                                    placeholder="{{ show.network}}"
+                                />
+                            </td>
+                            <td class="last_td">
+                                <input
+                                    type="date"
+                                    name="release_date"
+                                    value="{{ show.release_date }}"
+                                    class="short_input"
+                                />
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <br />
+                <p>Description</p>
+                <input
+                    type="textarea"
+                    class="huge_input"
+                    name="description"
+                    placeholder="{{ show.description }}"
+                />
+                <div class="center">
+                    <button type="submit">Create</button>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>
